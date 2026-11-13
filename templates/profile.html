@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Profile | Profile Management System</title>
+
+    <!-- Load application CSS styling -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>User Profile Management System</h1>
+        <p>Manage your personal information</p>
+      </div>
+
+      <div class="success-message">Registration Successful!</div>
+
+      <h2>My Profile</h2>
+
+      <!-- Display user details retrieved from SQLite -->
+      <div class="profile-info">
+        <div class="profile-field">
+          <span class="field-label">Full Name</span>
+          <p>{{ user.name }}</p>
+        </div>
+
+        <div class="profile-field">
+          <span class="field-label">Email Address</span>
+          <p>{{ user.email }}</p>
+        </div>
+
+        <div class="profile-field">
+          <span class="field-label">Phone Number</span>
+          <p>{{ user.phone }}</p>
+        </div>
+      </div>
+
+      <!-- Open the update form for this user -->
+      <a class="btn" href="{{ url_for('update_profile', user_id=user.id) }}">
+        Edit Profile
+      </a>
+
+      <a class="btn btn-secondary" href="{{ url_for('home') }}">
+        Register Another User
+      </a>
+
+      <div class="footer">
+        <p>Profile Management System</p>
+        <p>Powered by Python Flask & SQLite</p>
+      </div>
+    </div>
+  </body>
+</html>
