@@ -1,0 +1,30 @@
+# Python virtual environments
+
+.venv/
+.venv-1/
+venv/
+
+# Python cache files
+
+**pycache**/
+_.pyc
+_.pyo
+
+# SQLite database
+
+profiles.db
+\*.db-journal
+
+# Environment variables and secrets
+
+.env
+.env.\*
+
+# VS Code settings
+
+.vscode/
+
+# Operating system files
+
+.DS_Store
+Thumbs.db
